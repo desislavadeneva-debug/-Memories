@@ -3,47 +3,31 @@ import { ChevronLeft, ChevronRight, Heart, Sparkles } from 'lucide-react';
 
 interface Wish {
   id: number;
-  author: string;
+  name: string;
   message: string;
   role: string;
 }
 
 const wishes: Wish[] = [
+  
   {
+    name: "Сергей Атанасов",
     id: 1,
-    author: "Sarah Chen",
-    message: "Your leadership has been transformative. Thank you for always pushing us to think bigger and aim higher. You've built not just great products, but a great team.",
-    role: "Senior Frontend Developer"
+    role: "Maintenance",
+    message: "Успех в квото се захванеш, по-читаво планиране и по-малко лавиране измежду всевъзможни и невъзможни обстоятелства, повече пари и по-малко работа :D",
   },
   {
-    id: 2,
-    author: "Michael Rodriguez",
-    message: "Working under your guidance has been the highlight of my career. Your technical vision and human touch made every challenge an opportunity to grow.",
-    role: "Backend Engineer"
-  },
+  id:2,
+  name: "Сашо Иванов",
+  role: "Frontend Developer",
+  message:   "Три години пример, спокойствие и заряд,  щитът на отдела и двигателят на идеите. Ще липсваш като ръководител, но ще останеш като стандарт.",
+},
+
   {
     id: 3,
-    author: "Emily Watson",
-    message: "You taught us that great technology comes from great culture. Your legacy will live on in every line of code we write and every decision we make.",
-    role: "DevOps Lead"
-  },
-  {
-    id: 4,
-    author: "James Park",
-    message: "Thank you for believing in us when we didn't believe in ourselves. Your mentorship turned junior developers into confident engineers.",
-    role: "Full Stack Developer"
-  },
-  {
-    id: 5,
-    author: "Aisha Patel",
-    message: "Your ability to balance innovation with pragmatism has been inspiring. You've shown us that leadership is about empowering others to lead.",
-    role: "Product Engineer"
-  },
-  {
-    id: 6,
-    author: "David Kim",
-    message: "From code reviews to career advice, you've always given your best. The impact you've made goes far beyond our codebase—it's in our hearts.",
-    role: "Mobile Developer"
+    name: "Цветана Калайкова",
+    message: "Въпреки че понякога гледахме от различни политически ъгли, винаги съм имала огромно възхищение към ума и идеите ти.  Ти поне знаеше какво говориш! 😄 За мен оставаш един от най-ярките колеги, с които съм работила в Телематик - умен, прям и вдъхновяващ и аз НАИСТИНА те ценя и те харесвам и ще ми липсваш. Успех и късмет в новото поприще!",
+    role: "UX designer"
   }
 ];
 
@@ -106,7 +90,7 @@ function App() {
 
             <div className="text-center space-y-2">
               <p className="text-2xl font-semibold text-cyan-300">
-                {wishes[currentIndex].author}
+                {wishes[currentIndex].name}
               </p>
               <p className="text-sm text-slate-400 uppercase tracking-wider">
                 {wishes[currentIndex].role}
