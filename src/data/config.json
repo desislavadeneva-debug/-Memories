@@ -1,0 +1,42 @@
+{
+  "ui": {
+    "title": "Farewell, Team Lead! 👋",
+    "subtitle": "",
+    "theme": {
+      "--bg": "#0f1222",
+      "--card": "#161a2b",
+      "--text": "#e7e9f3",
+      "--muted": "#9aa1b2",
+      "--accent": "#6ae3ff",
+      "--accent-2": "#b388ff",
+      "--font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "--message-font-size": "18px",
+      "--title-font-size": "28px",
+      "--subtitle-font-size": "14px",
+      "--border-color": "rgba(255,255,255,0.06)",
+      "--shadow-color": "rgb(255 255 255 / 40%)"
+    },
+    "styles": {
+      "radius": 16,
+      "cardMinHeight": 300,
+      "transitionMs": 420,
+      "dotSize": 9,
+      "spacing": 28
+    },
+    "autoplay": {
+      "enabled": false,
+      "intervalMs": 5000,
+      "pauseOnHover": true
+    },
+    "font": {
+      "importUrl": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap",
+      "family": "'Poppins', ui-sans-serif, system-ui"
+    },
+    
+    "layout": {
+      "maxWidth": "960px",
+      "padding": "24px",
+      "shadowDepth": 0.35
+    }
+  }
+}
