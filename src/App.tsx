@@ -90,9 +90,10 @@ function App() {
           <div className="flex-1 flex flex-col justify-center mb-8">
             <div className="relative">
               <div className="absolute -top-4 -left-2 text-8xl text-blue-400/20 font-serif leading-none">"</div>
-              <p className="text-xl md:text-2xl text-white leading-relaxed relative z-10 mb-8 text-center px-8">
+              <div className="text-xl md:text-2xl text-white leading-relaxed relative z-10 mb-8 text-center px-8">
                 {wishes[currentIndex].message}
-              </p>
+              </div>
+              <div className="absolute -bottom-12 -right-2 text-8xl text-blue-400/20 font-serif leading-none">"</div>
             </div>
 
             <div className="text-center space-y-2">
