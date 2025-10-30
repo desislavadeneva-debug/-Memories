@@ -50,7 +50,9 @@ const wishes: Wish[] = [
     name: "Антонио Донов",
     role: "Head of Business Development",
     message:
-      `В Дубай разбрах, че дори зад най-сериозното лице се крие човек с чувство за хумор.Е, поне така си мисля — още не съм сигурен. 😄 Ерудиран, стриктен и винаги stoneface  🗿 — дори в пустинята на 45 градуса.Успех, Олег! Ще ни липсваш – и този път няма как да го скриеш с stoneface 🗿.`,
+      `В Дубай разбрах, че дори зад най-сериозното лице се крие човек с чувство за хумор.Е, поне така си мисля — още не съм сигурен. 😄 Ерудиран, стриктен и винаги stoneface  🗿 — дори в пустинята на 45 градуса.
+      Успех, Олег!
+       Ще ни липсваш – и този път няма как да го скриеш с stoneface 🗿.`,
   },
   {
     id: 7,
@@ -62,7 +64,7 @@ const wishes: Wish[] = [
   {
     id: 9,
     name: "Станислав Омарев",
-    role: "Frontend Developer",
+    role: "Senior Front-End Developer, Team Lead",
     message: `Благодарим ти за вдъхновението, професионализма и страстта, с които водеше екипа!
    Беше пример за лидер, който не просто ръководи, а изгражда.
     Пожелаваме ти нови успехи, интересни проекти и хора, с които работата да е удоволствие.
@@ -109,7 +111,6 @@ function App() {
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-5xl w-full relative z-10">
@@ -124,25 +125,25 @@ function App() {
           <p className="text-xl md:text-2xl text-slate-300 font-light">
             To Our Inspiring Tech Development Leader
           </p>
-          <div className="flex items-center justify-center gap-2 text-slate-400">
+          <div className="flex items-center justify-center gap-1 text-slate-400">
             <Heart className="w-5 h-5 fill-red-400 text-red-400 animate-pulse" />
             <p className="text-sm">From Your Team, With Gratitude</p>
             <Heart className="w-5 h-5 fill-red-400 text-red-400 animate-pulse" />
           </div>
         </div>
 
-        <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12 min-h-[400px] flex flex-col justify-between">
+        <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 md:p-9 min-h-[400px] flex flex-col justify-between">
           <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
             Wish {currentIndex + 1} of {wishes.length}
           </div>
 
           <div className="flex-1 flex flex-col justify-center mb-8">
             <div className="relative">
-              <div className="absolute -top-4 -left-2 text-8xl text-blue-400/20 font-serif leading-none">
+              <div className="absolute -top-4 -left-2 text-6xl text-blue-400/50 font-serif leading-none">
                 "
               </div>
-              <div className="text-xl md:text-2xl text-white leading-relaxed relative z-10 mb-8 text-center px-8">
-                <div className="text-xl md:text-2xl text-white leading-relaxed relative z-10 mb-8 text-center px-8">
+              <div className="text-xl md:text-2xl text-white relative z-10 mb-8 text-center md:px-4 pt-4">
+                <div className="text-xl md:text-2xl text-white  relative z-10 mb-8 text-center md:px-4">
                   {wishes[currentIndex].message.split("\n").map((line, i) => (
                     <div key={i}>
                       {line}
@@ -151,13 +152,13 @@ function App() {
                   ))}
                 </div>
               </div>
-              <div className="absolute -bottom-12 -right-2 text-8xl text-blue-400/20 font-serif leading-none">
+              <div className="absolute -bottom-12 -right-2 text-6xl text-blue-400/50 font-serif leading-none">
                 "
               </div>
             </div>
 
             <div className="text-center space-y-2">
-              <p className="text-2xl font-semibold text-cyan-300">
+              <p className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-emerald-400 bg-clip-text text-transparent">
                 {wishes[currentIndex].name}
               </p>
               <p className="text-sm text-slate-400 uppercase tracking-wider">
@@ -175,7 +176,7 @@ function App() {
               <ChevronLeft className="w-6 h-6 text-white group-hover:text-cyan-300 transition-colors" />
             </button>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1">
               {wishes.map((_, index) => (
                 <button
                   key={index}
