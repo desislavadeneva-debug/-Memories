@@ -168,18 +168,18 @@ function App() {
           </div>
         </div>
 
-        <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 md:p-9 min-h-[400px] flex flex-col justify-between">
+        <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-7 md:p-9 h-[400px]  flex flex-col justify-between">
           <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
             Wish {currentIndex + 1} of {wishes.length}
           </div>
 
-          <div className="flex-1 flex flex-col justify-center mb-8">
+          <div className="flex-1 min-h-0 flex flex-col mb-8">
             <div className="relative">
               <div className="absolute -top-4 -left-2 text-6xl text-blue-400/50 font-serif leading-none">
                 "
               </div>
-              <div className="text-xl md:text-2xl text-white relative z-10 mb-8 text-center md:px-4 pt-4">
-                <div className="text-xl md:text-2xl text-white  relative z-10 mb-8 text-center md:px-4">
+              <div className="text-lg sm:text-xl md:text-2xl text-white relative z-10 mb-6 sm:mb-8 text-center px-2 sm:px-3 md:px-4 pt-3 sm:pt-4">
+                <div className="text-lg sm:text-xl md:text-2xl text-white relative z-10 text-center px-1 sm:px-2 md:px-4 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pr-2 max-h-40 sm:max-h-56 md:max-h-80">
                   {wishes[currentIndex].message.split("\n").map((line, i) => (
                     <div key={i}>
                       {line}
@@ -212,7 +212,7 @@ function App() {
               <ChevronLeft className="w-6 h-6 text-white group-hover:text-cyan-300 transition-colors" />
             </button>
 
-            <div className="flex gap-1">
+            <div className="flex gap-1 px-0 sm:px-3 md:px-4">
               {wishes.map((_, index) => (
                 <button
                   key={index}
