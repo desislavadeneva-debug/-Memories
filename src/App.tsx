@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Heart, Sparkles } from "lucide-react";
+import introVideo from "./video/OlegVideo.mp4";
 
 interface Wish {
   id: number;
@@ -126,31 +127,46 @@ const wishes: Wish[] = [
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showIntro, setShowIntro] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % wishes.length);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % wishes.length);
+  const prevSlide = () =>
     setCurrentIndex((prev) => (prev - 1 + wishes.length) % wishes.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const goToSlide = (index: number) => setCurrentIndex(index);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight") {
-        nextSlide();
-      } else if (event.key === "ArrowLeft") {
-        prevSlide();
-      }
+      if (event.key === "ArrowRight") nextSlide();
+      else if (event.key === "ArrowLeft") prevSlide();
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // 🎬 Началният екран с видеото
+  if (showIntro) {
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center bg-slate-900">
+        <div className="relative w-[80%] max-w-5xl rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+          <video
+            ref={videoRef}
+            src={introVideo}
+            className="w-full h-auto rounded-2xl"
+            controls
+            onEnded={() => setShowIntro(false)}
+          />
+       
+          <button
+            onClick={() => setShowIntro(false)}
+            className="absolute top-3 left-3 bg-black/60 text-white px-3 py-1 rounded-md text-sm hover:bg-black/80 transition"
+          >
+            Skip
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
