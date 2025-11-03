@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Heart, Sparkles } from "lucide-react";
-import introVideo from "./video/OlegVideo.mp4";
+// import introVideo from "./video/OlegMovie.mp4";
 
 interface Wish {
   id: number;
@@ -151,7 +151,7 @@ function App() {
         <div className="relative w-[80%] max-w-5xl rounded-2xl overflow-hidden shadow-2xl border border-white/10">
           <video
             ref={videoRef}
-            src={introVideo}
+            src={"./video/OlegMovie.mp4"}
             className="w-full h-auto rounded-2xl"
             controls
             onEnded={() => setShowIntro(false)}
