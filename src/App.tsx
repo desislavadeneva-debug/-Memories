@@ -156,7 +156,7 @@ function App() {
         <div className="relative w-[80%] max-w-5xl rounded-2xl overflow-hidden shadow-2xl border border-white/10">
           <video
             ref={videoRef}
-            src={"./video/OlegMovie.mp4"}
+            src={"./video/Oleg_Video.mp4"}
             className="w-full h-auto rounded-2xl"
             controls
             onEnded={() => setShowIntro(false)}
